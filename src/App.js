@@ -38,7 +38,7 @@ function Board() {
   return (
     <div>
       <h1 class="Color">TIC-TAC-TOE</h1>
-      <div className="status">{status}</div>
+      <div class="Color" className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
