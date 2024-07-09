@@ -18,7 +18,7 @@ function Board() {
     if (calculateWinner(squares) || squares[index]) {
       return;
     }
-    newSquares[index] = xIsNext ? 'X' : 'O';
+    newSquares[index] = xIsNext ? 'X' : '✔';
     setSquares(newSquares);
     setXIsNext(!xIsNext);
   };
@@ -32,7 +32,7 @@ function Board() {
   if (winner) {
     status = 'Winner: ' + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = 'Next player: ' + (xIsNext ? 'X' : '✔');
   }
 
   return (
@@ -54,8 +54,12 @@ function Board() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <button class="Again" onClick={cancel} type="reset">RESET</button>
     </div>
   );
+}
+function cancel(){
+  window.location.reload();
 }
 
 function calculateWinner(squares) {
